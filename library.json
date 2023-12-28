@@ -1,0 +1,9 @@
+{
+    "name": "QymOS stm32 Monochrome User Interface",
+    "version": "0.0.1",
+    "authors": {
+        "name": "Denis Kazachenkov",
+        "email": "basson30@gmail.com",
+        "url": "https://github.com/basson/qymos-stm32-gui-monochrome"
+    }
+}
