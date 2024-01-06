@@ -48,14 +48,14 @@ namespace qymos
              * @param parentId Parent item Id
              * @param element Screen element
              */
-            void addItem(uint8_t id, uint8_t parentId, IScreen *element);
+            void AddItem(uint8_t id, uint8_t parentId, IScreen *element);
             /**
              * @brief Get the Parent item
              *
              * @param id Current item Id
              * @return int8_t Parrent item Id or -1
              */
-            int8_t getParent(uint8_t id);
+            int8_t GetParent(uint8_t id);
             /**
              * @brief Get the Child item
              *
@@ -63,14 +63,14 @@ namespace qymos
              * @param childs Childs id array
              * @return int8_t Count childs item or -1
              */
-            int8_t getChild(uint8_t id, uint8_t *childs);
+            int8_t GetChild(uint8_t id, uint8_t *childs);
             /**
              * @brief Get the item scren by Id
              *
              * @param id Item Id
              * @return IScreen* link item screen
              */
-            IScreen *getItem(uint8_t id);
+            IScreen *GetItem(uint8_t id);
             /**
              * @brief Set item Id to default selected
              *

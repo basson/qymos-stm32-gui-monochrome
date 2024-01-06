@@ -21,8 +21,8 @@ namespace qymos
             Scroll _scroll;
 
         public:
-            void addItem(Text *text, Bitmap *bitmap = nullptr);
-            void addItem(Text *text, CheckBox *check = nullptr);
+            void AddItem(Text *text, Bitmap *bitmap = nullptr);
+            void AddItem(Text *text, CheckBox *check = nullptr);
             void removeItem(uint8_t index);
             void Render(DisplayBuffer *buffer);
             void SetPosition(Position position);

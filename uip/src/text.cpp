@@ -35,7 +35,7 @@ namespace qymos
             {
                 if (Utf8Char::GetCharCode(_text, index, &code, &nextIndex) != 0)
                 {
-                    const tChar *ch = Utf8Char::findCharByCode(code, _font);
+                    const tChar *ch = Utf8Char::FindCharByCode(code, _font);
                     uint8_t value = 0;
                     int x0, y0;
                     int counter = 0;
@@ -109,7 +109,7 @@ namespace qymos
             {
                 if (Utf8Char::GetCharCode(_text, index, &code, &nextIndex) != 0)
                 {
-                    const tChar *ch = Utf8Char::findCharByCode(code, _font);
+                    const tChar *ch = Utf8Char::FindCharByCode(code, _font);
                     widthNextChar += ch->image->width;
                     if (maxHeight < ch->image->height)
                         maxHeight = ch->image->height;

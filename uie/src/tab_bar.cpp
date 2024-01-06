@@ -4,7 +4,7 @@ namespace qymos
 {
 namespace gui
 {
-    void TabBar::addTab(Text *text)
+    void TabBar::AddTab(Text *text)
     {
         if (_lastIndex >= 10)
             return;
@@ -12,7 +12,7 @@ namespace gui
         _element[_lastIndex]->SetText(text);
         _lastIndex++;
     }
-    void TabBar::removeTab(uint8_t index)
+    void TabBar::RemoveTab(uint8_t index)
     {
     }
     void TabBar::Render(DisplayBuffer *buffer)

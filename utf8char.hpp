@@ -16,7 +16,7 @@ namespace qymos
         {
         public:
             static int GetCharCode(const char *str, int start, int *resultCode, int *nextIndex);
-            static const tChar *findCharByCode(int code, const tFont *font);
+            static const tChar *FindCharByCode(int code, const tFont *font);
         };
 
     } // namespace qui

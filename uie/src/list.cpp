@@ -4,7 +4,7 @@ namespace qymos
 {
 namespace gui
 {
-    void List::addItem(Text *text, Bitmap *bitmap)
+    void List::AddItem(Text *text, Bitmap *bitmap)
     {
         if (_lastIndex >= 30)
             return;
@@ -14,7 +14,7 @@ namespace gui
         _scroll.SetCount(_lastIndex);
         _lastIndex++;
     }
-    void List::addItem(Text *text, CheckBox *check)
+    void List::AddItem(Text *text, CheckBox *check)
     {
         if (_lastIndex >= 30)
             return;

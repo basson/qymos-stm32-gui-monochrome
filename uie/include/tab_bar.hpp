@@ -19,8 +19,8 @@ namespace qymos
             uint8_t _active = 0;
 
         public:
-            void addTab(Text *text);
-            void removeTab(uint8_t index);
+            void AddTab(Text *text);
+            void RemoveTab(uint8_t index);
             void Render(DisplayBuffer *buffer);
             void SetActiveTab(uint8_t active);
             void Visible(bool visible = true){};

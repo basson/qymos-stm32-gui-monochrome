@@ -16,7 +16,7 @@ namespace qymos
             return _hierarchy;
         }
 
-        void Hierarchy::addItem(uint8_t id, uint8_t parentId, IScreen *element)
+        void Hierarchy::AddItem(uint8_t id, uint8_t parentId, IScreen *element)
         {
             if (_lastIndex >= 60)
                 return;
@@ -26,7 +26,7 @@ namespace qymos
 
             _lastIndex++;
         }
-        int8_t Hierarchy::getParent(uint8_t id)
+        int8_t Hierarchy::GetParent(uint8_t id)
         {
             for (uint8_t i = 0; i < _lastIndex; i++)
             {
@@ -35,7 +35,7 @@ namespace qymos
             }
             return -1;
         }
-        int8_t Hierarchy::getChild(uint8_t id, uint8_t *childs)
+        int8_t Hierarchy::GetChild(uint8_t id, uint8_t *childs)
         {
             int8_t count = -1;
             for (uint8_t i = 0; i < _lastIndex; i++)
@@ -48,7 +48,7 @@ namespace qymos
             }
             return count;
         }
-        IScreen *Hierarchy::getItem(uint8_t id)
+        IScreen *Hierarchy::GetItem(uint8_t id)
         {
             for (uint8_t i = 0; i < _lastIndex; i++)
             {

@@ -8,7 +8,7 @@ namespace gui
     {
         if (_lastIndex >= 10)
             return;
-        _tabBar.addTab(title);
+        _tabBar.AddTab(title);
         Position position = {_position.x, (uint16_t)(_position.y+ _tabBarHeight - 1), _position.width, (uint16_t)(_position.height - _tabBarHeight + 1)};
         _element[_lastIndex] = page;
         _element[_lastIndex]->SetPosition(position);

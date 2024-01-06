@@ -82,7 +82,7 @@ namespace qymos
             return (result);
         }
 
-        const tChar *Utf8Char::findCharByCode(int code, const tFont *font)
+        const tChar *Utf8Char::FindCharByCode(int code, const tFont *font)
         {
             int count = font->length;
             int first = 0;
