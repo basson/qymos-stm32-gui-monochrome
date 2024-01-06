@@ -1,7 +1,7 @@
 #include "../include/text.hpp"
 
 #include <string.h>
-#include "HellenicaRus8px.h"
+// #include "HellenicaRus8px.h"
 #include "utf8char.hpp"
 
 namespace qymos
