@@ -58,9 +58,9 @@ namespace qymos
                             // set pixel
                             if ((value & 0x80) != 0)
                             {
-                                if ((_position.x + widthNextChar + x0 >= 0) and
-                                    (_position.x + widthNextChar + x0 < width) and
-                                    (_position.y + y0 >= 0) and
+                                if ((_position.x + widthNextChar + x0 >= 0) &&
+                                    (_position.x + widthNextChar + x0 < width) &&
+                                    (_position.y + y0 >= 0) &&
                                     (_position.y + y0 < height))
                                 {
                                     byte = (((_position.y + y0) / 8) * 128) + (_position.x + widthNextChar + x0);

@@ -1,31 +1,35 @@
 #pragma once
 
 #include "stdint.h"
+#include "stdlib.h"
+#include "string.h"
 
 #include "types.hpp"
 #include "ielement.hpp"
-#include "list_item.hpp"
-#include "scroll.hpp"
+
+#include "uip/include/rect.hpp"
+
+#include "uie/include/list.hpp"
+
 
 namespace qymos
 {
     namespace gui
     {
-        class List : public IElement
+        class InputSelect : public IElement
         {
         private:
-            ListItem *_element[30];
-            uint8_t _lastIndex = 0;
-            int8_t _active = 0;
-            uint8_t _listItemHeight = 13;
-            Scroll _scroll;
+            Rect _border;
+            Rect _rect;
+            List _list;
             bool _isVisible = true;
 
         public:
             void Render(DisplayBuffer *buffer);
+            void Render(DisplayBuffer *buffer, uint16_t width, uint16_t height);
+            void RemoveItem(uint8_t index);
             void AddItem(Text *text, Bitmap *bitmap = nullptr);
             void AddItem(Text *text, CheckBox *check = nullptr);
-            void RemoveItem(uint8_t index);
             void SetPosition(Position position);
             void SetItemHeight(uint8_t height);
             void SetActiveItem(uint8_t active);
@@ -35,5 +39,6 @@ namespace qymos
             void Visible(bool visible = true);
         };
 
-    } // namespace qui
+    } // namespace gui
+
 } // namespace qymos
