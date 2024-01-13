@@ -29,6 +29,10 @@ namespace qymos
         {
             _list.RemoveItem(index);
         }
+        void InputSelect::AddItem(Text *text)
+        {
+            _list.AddItem(text);
+        }
         void InputSelect::AddItem(Text *text, Bitmap *bitmap)
         {
             _list.AddItem(text, bitmap);

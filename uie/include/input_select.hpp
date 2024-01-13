@@ -28,8 +28,9 @@ namespace qymos
             void Render(DisplayBuffer *buffer);
             void Render(DisplayBuffer *buffer, uint16_t width, uint16_t height);
             void RemoveItem(uint8_t index);
-            void AddItem(Text *text, Bitmap *bitmap = nullptr);
-            void AddItem(Text *text, CheckBox *check = nullptr);
+            void AddItem(Text *text);
+            void AddItem(Text *text, Bitmap *bitmap);
+            void AddItem(Text *text, CheckBox *check);
             void SetPosition(Position position);
             void SetItemHeight(uint8_t height);
             void SetActiveItem(uint8_t active);

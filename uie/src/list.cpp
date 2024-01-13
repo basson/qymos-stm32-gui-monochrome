@@ -4,6 +4,11 @@ namespace qymos
 {
     namespace gui
     {
+        void List::AddItem(Text *text)
+        {
+            Bitmap *bitmap = nullptr;
+            AddItem(text, bitmap);
+        }
         void List::AddItem(Text *text, Bitmap *bitmap)
         {
             if (_lastIndex >= 30)
