@@ -33,7 +33,8 @@ namespace qymos
             {
                 position = _check->GetPosition();
                 iconMargin = position.width + 3;
-                _check->SetPosition({(uint16_t)(_position.x + 3), (uint16_t)(_position.y + (_position.height / 2 - position.height / 2)), 0, 0});
+                _check->SetCheck(_isChecked);
+                _check->SetPosition({(uint16_t)(_position.x + 3), (uint16_t)(_position.y + (_position.height / 2 - position.height / 2)), position.width, position.height});
                 _check->SetInvert(_active);
                 _check->Render(buffer, width, height);
             }
@@ -54,6 +55,14 @@ namespace qymos
         void ListItem::SetCheckBox(CheckBox *check)
         {
             _check = check;
+        }
+        void ListItem::SetCheckBoxState(bool state )
+        {
+            _isChecked = state;
+        }
+        bool ListItem::GetCheckBoxState()
+        {
+            return _isChecked;
         }
         void ListItem::Active(bool active)
         {

@@ -4,6 +4,7 @@ namespace qymos
 {
     namespace gui
     {
+
         void List::AddItem(Text *text)
         {
             Bitmap *bitmap = nullptr;
@@ -82,7 +83,7 @@ namespace qymos
         }
         void List::ChangeActiveByDirection(bool direction)
         {
-             if (!direction)
+            if (!direction)
                 _active++;
             else
                 _active--;
@@ -93,6 +94,39 @@ namespace qymos
                 _active = GetSize();
 
             _scroll.SetProgress(_active);
+        }
+        void List::SetItemCheck(uint8_t index, bool check)
+        {
+            if (index >= _lastIndex)
+                return;
+            _element[index]->SetCheckBoxState(check);
+        }
+        void List::SetAllItemCheck(bool check)
+        {
+            for (uint8_t i = 0; i < _lastIndex; i++)
+            {
+                _element[i]->SetCheckBoxState(check);
+            }
+        }
+        uint8_t List::IsItemsCheck(uint8_t *indexes, bool check)
+        {
+            uint8_t count = 0;
+            for (uint8_t i = 0; i < _lastIndex; i++)
+            {
+                if (_element[i]->GetCheckBoxState() == check)
+                {
+                    indexes[count] = i;
+                    count++;
+                }
+            }
+
+            return count;
+        }
+        bool List::IsItemCheck(uint8_t index)
+        {
+            if (index >= _lastIndex)
+                return false;
+            return _element[index]->GetCheckBoxState();
         }
         uint8_t List::GetSize()
         {

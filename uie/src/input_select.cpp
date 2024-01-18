@@ -62,6 +62,22 @@ namespace qymos
         {
             _list.ChangeActiveByDirection(direction);
         }
+        void InputSelect::SetItemCheck(uint8_t index, bool check)
+        {
+            _list.SetItemCheck(index, check);
+        }
+        void InputSelect::SetAllItemCheck(bool check)
+        {
+            _list.SetAllItemCheck(check);
+        }
+        bool InputSelect::IsItemCheck(uint8_t index)
+        {
+            return _list.IsItemCheck(index);
+        }
+        uint8_t InputSelect::IsItemsCheck(uint8_t *indexes, bool check)
+        {
+            return _list.IsItemsCheck(indexes, check);
+        }
         uint8_t InputSelect::GetSize()
         {
             return _list.GetSize();

@@ -10,7 +10,7 @@ namespace qymos
 {
     namespace gui
     {
-        class CheckBox : public IElement
+        class RadioBox : public IElement
         {
         private:
             Bitmap *_bitmapCheck;
@@ -32,5 +32,6 @@ namespace qymos
             void Visible(bool visible = true);
         };
 
-    } // namespace qui
+    } // namespace gui
+
 } // namespace qymos

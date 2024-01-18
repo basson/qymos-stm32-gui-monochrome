@@ -22,6 +22,7 @@ namespace qymos
             Rect _rect;
             Bitmap *_icon = nullptr;
             CheckBox *_check = nullptr;
+            bool _isChecked = false;
             bool _active = false;
 
         public:
@@ -30,6 +31,8 @@ namespace qymos
             void SetText(Text *text);
             void SetIcon(Bitmap *bitmap);
             void SetCheckBox(CheckBox *check);
+            void SetCheckBoxState(bool state = false);
+            bool GetCheckBoxState();
             void Active(bool active = false);
             void Visible(bool visible = true){};
         };

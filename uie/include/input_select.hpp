@@ -11,7 +11,6 @@
 
 #include "uie/include/list.hpp"
 
-
 namespace qymos
 {
     namespace gui
@@ -36,6 +35,10 @@ namespace qymos
             void SetActiveItem(uint8_t active);
             uint8_t GetActiveItem();
             void ChangeActiveByDirection(bool direction);
+            void SetItemCheck(uint8_t index, bool check = false);
+            void SetAllItemCheck(bool check = false);
+            bool IsItemCheck(uint8_t index);
+            uint8_t IsItemsCheck(uint8_t *indexes, bool check = true);
             uint8_t GetSize();
             void Visible(bool visible = true);
         };

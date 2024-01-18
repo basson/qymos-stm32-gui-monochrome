@@ -12,31 +12,24 @@ namespace qymos
         {
             if (!_visible)
                 return;
-
-            _border.SetPosition({_position.x, _position.y, _position.width, _position.height});
-            _border.SetInvert(_invert);
-            _border.Render(buffer); //, width, height);
-
-            if (!_isCheck)
-                return;
-
-            _check.SetFill(true);
-            _check.SetInvert(_invert);
-            if (_position.height < 5 || _position.width < 5)
-                _check.SetPosition({_position.x, _position.y, _position.width, _position.height});
+            if (_isCheck)
+                _bitmapCheck->Render(buffer);
             else
-                _check.SetPosition({(uint16_t)(_position.x + 2), (uint16_t)(_position.y + 2), (uint16_t)(_position.width - 4), (uint16_t)(_position.height - 4)});
-            _check.Render(buffer); //, width, height);
+                _bitmapUncheck->Render(buffer);
+        }
+        void CheckBox::SetImageCheck(Bitmap *bitmap)
+        {
+            _bitmapCheck = bitmap;
+        }
+        void CheckBox::SetImageUncheck(Bitmap *bitmap)
+        {
+            _bitmapUncheck = bitmap;
         }
         void CheckBox::SetPosition(Position position)
         {
-            if (position.width != 0 && position.height != 0)
-                _position = position;
-            else
-            {
-                _position.x = position.x;
-                _position.y = position.y;
-            }
+            _position = position;
+            _bitmapCheck->SetPosition({(uint16_t)(position.x + (position.width - _bitmapCheck->GetPosition().width) / 2), (uint16_t)(position.y + (position.height - _bitmapCheck->GetPosition().height) / 2), 0, 0});
+            _bitmapUncheck->SetPosition({(uint16_t)(position.x + (position.width - _bitmapUncheck->GetPosition().width) / 2), (uint16_t)(position.y + (position.height - _bitmapUncheck->GetPosition().height) / 2), 0, 0});
         }
         void CheckBox::SetCheck(bool check)
         {
@@ -49,6 +42,8 @@ namespace qymos
         void CheckBox::SetInvert(bool invert)
         {
             _invert = invert;
+            _bitmapCheck->SetInvert(_invert);
+            _bitmapUncheck->SetInvert(_invert);
         }
         void CheckBox::Visible(bool visible)
         {

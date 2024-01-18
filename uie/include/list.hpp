@@ -17,9 +17,11 @@ namespace qymos
             ListItem *_element[30];
             uint8_t _lastIndex = 0;
             int8_t _active = 0;
+            
             uint8_t _listItemHeight = 13;
             Scroll _scroll;
             bool _isVisible = true;
+
 
         public:
             void Render(DisplayBuffer *buffer);
@@ -32,6 +34,10 @@ namespace qymos
             void SetActiveItem(uint8_t active);
             uint8_t GetActiveItem();
             void ChangeActiveByDirection(bool direction);
+            void SetItemCheck(uint8_t index, bool check = false);
+            void SetAllItemCheck(bool check = false);
+            bool IsItemCheck(uint8_t index);
+            uint8_t IsItemsCheck(uint8_t *indexes, bool check = true);
             uint8_t GetSize();
             void Visible(bool visible = true);
         };

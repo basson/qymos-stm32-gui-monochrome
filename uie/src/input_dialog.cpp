@@ -64,6 +64,10 @@ namespace qymos
         {
             _textOk = text;
         }
+        void InputDialog::SetVariant(Variant variant)
+        {
+            _result = (bool)variant;
+        }
         void InputDialog::Toggle()
         {
             _result = !_result;
