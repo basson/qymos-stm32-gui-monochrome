@@ -46,6 +46,7 @@ namespace qymos
              * @param text Char array
              */
             void SetText(char *text);
+            void SetText(const char *text);
             /**
              * @brief Set the Invert
              *

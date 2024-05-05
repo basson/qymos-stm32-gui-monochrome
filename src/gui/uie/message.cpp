@@ -13,8 +13,6 @@ namespace qymos
             if (!_isVisible)
                 return;
 
-            Position position;
-
             _rect.SetPosition(_position);
             _rect.SetFill(true);
             _rect.SetInvert(true);

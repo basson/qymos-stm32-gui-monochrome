@@ -136,6 +136,10 @@ namespace qymos
             _text = text;
             GetBounds();
         }
+        void Text::SetText(const char *text)
+        {
+            SetText((char *)text);
+        }
         void Text::SetInvert(bool invert)
         {
             _invert = invert;
